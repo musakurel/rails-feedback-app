@@ -58,6 +58,7 @@ class InboxesController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_inbox
       @inbox = Inbox.find(params[:id])
