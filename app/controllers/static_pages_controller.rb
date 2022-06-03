@@ -1,13 +1,9 @@
 class StaticPagesController < ApplicationController
-  def landing_page
-  end
+  def landing_page; end
 
-  def pricing
-  end
+  def pricing; end
 
-  def privacy
-  end
+  def privacy; end
 
-  def about
-  end
+  def about; end
 end
