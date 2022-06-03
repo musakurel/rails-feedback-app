@@ -3,7 +3,15 @@
   <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
   </h2>
   </center>
-  <%= link_to "Inboxes", inboxes_path%>
-  <%= link_to "New Inbox", new_inbox_path%>
+  <%= link_to_unless_current "Inboxes", inboxes_path%>
+  <%= link_to_unless_current "New Inbox", new_inbox_path%>
+  <% if signed_in? %>
+    <%= link_to current_user.email, edit_user_registration_path %>
+
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path %>
+    <%= link_to "Register", new_user_registration_path %>
+  <% end %>
   <hr>
   
