@@ -4,4 +4,5 @@ class Inbox < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :name, length: { in: MIN_LENGTH..MAX_LENGTH }
+  belongs_to :user
 end
